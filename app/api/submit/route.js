@@ -28,7 +28,7 @@ export async function POST(request) {
       const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
       
       // CRITICAL FIX 2: Correct Model Name (2.5 does not exist)
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
       // Generate User Reply
       const userPrompt = `Write a short, polite response (under 50 words) to a customer who gave us a ${rating}-star review. Review: "${review}"`;
