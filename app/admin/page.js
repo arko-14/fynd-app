@@ -9,7 +9,7 @@ export default function Admin() {
     const fetchReviews = async () => {
       try {
         // 'no-store' ensures we get fresh data every time (no caching)
-        const res = await fetch('/api/reviews', { cache: 'no-store' });
+        const res = await fetch(`/api/reviews?t=${Date.now()}`, { cache: 'no-store' });
         const data = await res.json();
         // Check if data is an array before setting state to avoid crashes
         if (Array.isArray(data)) {
